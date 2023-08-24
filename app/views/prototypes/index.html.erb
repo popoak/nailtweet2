@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="jp">
+  <head>
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <style>
+  .d-block w-100 {
+    height: 
+  }
+
+  </style>
+  
+  </head>
+  <%= form_with(url: search_prototypes_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "商品を検索する", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
+  <body>
+<nav class="navbar navbar-expand-lg bg-transparent">
+  <div class="container-fluid">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          カテゴリーから探す
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">・シンプル</a></li>
+          <li><a class="dropdown-item" href="#">・かわいい</a></li>
+          <li><a class="dropdown-item" href="#">・クール</a></li>
+          <li><a class="dropdown-item" href="#">・オフィス</a></li>
+          <%# <li><hr class="dropdown-divider"></li> %>
+          <%# <li><a class="dropdown-item" href="#">Something else here</a></li> %>
+        </ul>
+      </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            イベントから探す
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">・お祭り</a></li>
+            <li><a class="dropdown-item" href="#">・結婚式</a></li>
+            <li><a class="dropdown-item" href="#">・ハロウィン</a></li>
+            <li><a class="dropdown-item" href="#">・クリスマス</a></li>
+            <li><a class="dropdown-item" href="#">・バレンタイン</a></li>
+            <%# <li><hr class="dropdown-divider"></li> %>
+            <%# <li><a class="dropdown-item" href="#">Something else here</a></li> %>
+          </ul>
+        </li>
+    </ul>
+  </div>
+</nav>
+
+    <!-- ここに検索フォームなどを配置 -->
+
+
+     <header class="header">
+  
+ <%= image_tag('blue.webp', alt: 'ヘッダー画像', class: 'custom-image-class') %>
+ 
+  <div class="nav">
+    
+    <!-- 他のコード（ログインボタンや検索フォームなど） -->
+  </div>
+    </header>
+
+    <div class="inner">
+
+
+    <div class="ranking-header">
+  <h2 class="ranking-title">
+    <img src="<%= image_path('oukan.jpeg') %>" alt="アイコン" class="ranking-icon">
+    <span class="ranking-text">人気アイテム</span>
+    <img src="<%= image_path('oukan.jpeg') %>" alt="アイコン" class="ranking-icon">
+  </h2>
+</div>
+    <div class="ranking-images">
+      <% @weekly_ranked_prototypes.each do |prototype| %>
+        <div class="ranking-item">
+          <%= link_to prototype_path(prototype) do %>
+            <%= image_tag prototype.image, alt: prototype.title, class: 'ranking-image' %>
+          <% end %>
+          <p class="ranking-likes">
+  <%= image_tag "thumb_16_2_1113.png", alt: "Heart Icon", width: 20, height: 20 %>
+  <%= prototype.likes.count %>
+</p>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="feature-images">
+  <%= image_tag('fruit-br.jpeg', alt: '特集画像', class: 'small-image') %>
+  <%= image_tag('summer_bn.png', alt: '特集画像', class: 'small-image') %>
+  <%= image_tag('9083239d.webp', alt: '特集画像', class: 'small-image') %>
+</div>
+
+    
+
+    <%# ログインしているときは以下を表示する %>
+    
+
+    <div class="card__wrapper">
+      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+      <%= render partial: "prototype" %>
+    </div>
+  </div>
+<%# </main> %>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+  <%# <script>
+  const myCarousel = document.getElementById('carouselExampleIndicators')
+
+   const carousel = new bootstrap.Carousel(myCarousel, {
+   interval: 2000,
+   touch: false,
+   wrap: true
+   })
+   </script> %>
+
+  </body>
+</html>

@@ -1,0 +1,596 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  color: #3b4043;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #3b4043;
+}
+
+/* 繝倥ャ繝繝ｼ */
+
+/* .header {
+  background-color:#f7bcf4;
+  margin-bottom: 48px;
+  padding: 20px 0;
+
+} */
+.inner {
+  width: 1250px;
+  height: 45px;
+  margin: 0 auto;
+}
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  width: 200px;
+}
+.nav__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 1.0em;
+  color: #f490e2;
+  text-decoration: none;
+  user-select: none;
+  border-radius: 10px;
+  transition: 0.4s ease;
+  margin-top: 8px;
+}
+.nav__btn:hover{
+  color: #fff;
+  background: #f490e2;
+}
+
+.nav__logout{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 1.0em;
+  color: #f490e2;
+  text-decoration: none;
+  user-select: none;
+}
+.nav__logout:hover{
+  opacity: 0.5;
+}
+
+/* 繝輔か繝ｼ繝�蜻ｨ繧� */
+.form__wrapper{
+  min-height: calc(100vh - 161px);
+}
+
+.form__text {
+  width: 50%;
+}
+
+.field{
+  margin: 30px 0;
+}
+
+.actions{
+  margin-bottom: 40px;
+}
+
+.form__btn{
+  display: flex;
+  padding: 0.8em 1.8em;
+  font-size: 0.8em;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background: #f687fa;
+  border: 1px #f687fa solid;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  transition: 0.2s ease;
+}
+
+.form__btn:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+/* 繝｡繧､繝ｳ */
+
+.greeting{
+  margin-bottom: 30px;
+}
+.greeting__link{
+  text-decoration: underline;
+}
+.page-heading {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+.card__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100vh - 161px);
+  margin-top: 20px;
+}
+.card {
+  width: calc((100% - 50px) / 5);
+  margin-bottom: 40px;
+}
+.card__img {
+  margin-bottom: 16px;
+}
+.card__title {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.card__summary {
+  font-size: 16px;
+}
+.card__user {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  text-align: right;
+  text-decoration: underline;
+}
+
+/* 隧ｳ邏ｰ繝壹�繧ｸ */
+.prototype__wrapper{
+  min-height: calc(100vh - 161px);
+}
+.prototype__hedding{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+.prototype__user{
+  display: block;
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  text-decoration: underline;
+}
+.prototype__image{
+  width: 40%;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+.prototype__detail{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+.detail__title{
+  font-size: 20px;
+  font-weight: bold;
+}
+.prototype__manage{
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+}
+.prototype__btn{
+  display: block;
+  padding: 0.4em 1.6em;
+  font-size: 0.4em;
+  color: #f490e2;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #f490e2 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+}
+.prototype__btn:hover{
+  color: #fff;
+  background: #999;
+}
+
+.prototype__comments{
+  background-color: #f6f6f6;
+  padding: 20px;
+  margin: 28px 0 40px 0;
+}
+
+.comments_lists{
+  padding-left: 20px;
+}
+
+.comments_list{
+  list-style-type: square;
+  padding-bottom: 5px;
+}
+
+.comment_user{
+  font-size: 16px;
+  color: #f8ebf5;
+  text-decoration: underline;
+}
+
+/* 繝ｦ繝ｼ繧ｶ繝ｼ繝壹�繧ｸ */
+.user__wrapper{
+  min-height: calc(100vh - 161px);
+}
+.table{
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  width: 50%;
+}
+.table__col1{
+  text-align: left;
+  font-weight: bold;
+  background: #f8edf6;
+  border-collapse: collapse;
+  border: 1px solid #c11fc3;
+  width: 30%;
+  padding: 8px;
+}
+.table__col2{
+  text-align: left;
+  border: 1px solid #c11fc3;
+  border-collapse: collapse;
+  width: 70%;
+  padding: 16px 8px;
+}
+.user__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 繝輔ャ繧ｿ繝ｼ */
+
+/* .footer {
+  background-color: #f7bcf4;
+  padding: 10px 0;
+} */
+.copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
+}
+
+/* 繧ｿ繝悶Ξ繝�ヨ蟇ｾ蠢� */
+@media (max-width: 1030px) {
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+  .card {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+  .prototype_image{
+    width: 60%;
+  }
+}
+
+ /* 繧ｹ繝槭�陦ｨ遉ｺ */
+@media (max-width: 599px) {
+  .logo {
+    width: 120px;
+  }
+  .page-heading {
+    font-size: 20px;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .card__title {
+    font-size: 18px;
+  }
+  .card__summary {
+    font-size: 14px;
+  }
+  .prototype_image{
+    width: 100%;
+  }
+  .table{
+    width: 100%;
+  }
+}
+
+.search-btn {
+  /* ここにボタンのスタイルを追加 */
+  background-color: #ff9900;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* application.scss */
+.search-btn {
+  /* ここにボタンのスタイルを追加 */
+  background-color: #f490e2;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  /* margin-top: 30px; */
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-input {
+  width: 300px; /* 好みに合わせて適切な幅を指定 */
+  height: 40px; /* 好みに合わせて適切な高さを指定 */
+  font-size: 16px; /* フォントサイズを調整 */
+  /* その他のスタイルプロパティを追加 */
+}
+
+.header {
+  /* その他のスタイルプロパティ */
+
+  margin-bottom: 15; /* ヘッダーの下のマージンをゼロに設定 */
+}
+
+/* .search-form {
+  margin-top: 0; /* 検索フォームの上のマージンをゼロに設定 */
+/* } */ 
+
+.detail-page {
+  background-image: url('white_00030.jpeg'); /* 背景画像のパスを指定 */
+  background-size: cover; /* 画面に合わせて画像を拡大縮小 */
+  background-position: center; /* 画像を中央に配置 */
+  background-repeat: no-repeat; /* 画像の繰り返しを無効に */
+  /* 他のスタイルを追加 */
+}
+
+.photos-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* 写真を折り返して表示 */
+  justify-content: space-between; /* 横方向に均等に配置 */
+  gap: 20px; /* 写真間の間隔を調整 */
+  margin-top: 20px; /* 写真一覧と上の要素との間隔を調整 */
+}
+
+.ranking-images{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.ranking-image {
+  /* width: 200px; 幅を調整 */
+  height: auto; /* 高さを自動調整 */
+  display: flex; /* アイテムを横並びに配置 */
+}
+
+.ranking-item{
+  width: 20%;
+  margin-left: 20px;
+    margin-right: 20px;
+}
+
+.heart-icon {
+  width: 20px; /* アイコンの幅を調整 */
+  height: 20px; /* アイコンの高さを調整 */
+  vertical-align: middle; /* アイコンとテキストを垂直に揃える */
+  margin-right: 5px; /* アイコンとテキストの間隔を調整 */
+  transition: filter 0.2s; /* フィルターの変化をアニメーションさせる */
+}
+
+.heart-icon.red {
+  filter: invert(25%) sepia(100%) saturate(7459%) hue-rotate(339deg) brightness(99%) contrast(99%);
+}
+
+.hidden {
+  display: none;
+}
+
+/* body {
+  background-color: #f8eff6; /* 好きな色に置き換えてください */
+
+  .header {
+    width: 100%;
+    height: auto;
+  }
+
+  .header {
+    text-align: center;
+  }
+
+  .ranking-header {
+    display: flex;
+    align-items: center; /* 画像とテキストを縦方向に中央揃え */
+  }
+  
+  .ranking-title {
+    display: flex;
+    align-items: center; /* 画像とテキストを縦方向に中央揃え */
+  }
+  
+  .ranking-icon {
+    width: 25px; /* 画像の幅を調整 */
+    height: 25px; /* 画像の高さを調整 */
+    margin-right: 5px; /* 画像とテキストの間隔を調整 */
+  }
+  
+  .ranking-text {
+    font-size: 24px; /* テキストのフォントサイズを調整 */
+    font-weight: bold; /* テキストの太さを設定 */
+  }
+
+  .image-container {
+    display: flex;
+    flex-wrap: wrap; /* 画像が横幅を超える場合に折り返す */
+    gap: 20px; /* 画像の間隔を調整 */
+  }
+  
+  .search-result-image {
+    width: 200px; /* 画像の幅を指定 */
+    height: auto; /* 高さは自動調整 */
+  }
+
+  .search-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .search-result {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .search-result-info {
+    margin-top: 8px;
+  }
+  
+  .search-result-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .search-result-catch-copy {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .search-result-title, .search-result-catch-copy {
+    font-size: 18px; /* 例えば18pxに設定 */
+    font-weight: bold;
+    color: #333; /* 好みに合わせてカラーコードを指定 */
+  }
+
+  .no-border {
+    border: none;
+    color: rgb(106, 180, 249);
+  }
+
+  .nav__left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .header {
+  position: relative;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  right: 0; /* 右寄せに変更 */
+}
+
+.nav__buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav__category {
+  font-size: 16px;
+}
+
+.nav__group {
+  font-size: 16px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.search-btn {
+  /* 必要なスタイルを設定 */
+  margin-left: 10px; /* ボタンの間に余白を設定 */
+}
+
+/* 特集画像のスタイル */
+.feature-images {
+  display: flex;
+  gap: 90px; /* 画像間の余白を調整 */
+  margin-top: 50px; /* 画像とヘッダー間の余白を調整 */
+}
+
+.small-image {
+  width: 430px;
+  height: 220px;
+}
+
+.nav-link.dropdown-toggle {
+  color: #f490e2; /* リンクの色 */
+  font-size: 15px; /* フォントサイズ */
+  font-weight: bold; /* フォントの太さ */
+}
+
+/* ドロップダウンメニューのスタイル */
+.dropdown-menu {
+  /* background-color: #f8f9fa; */
+  /* border: none; */
+  margin-top: 8px; /* メニューとリンクの間の余白を設定 */
+  display: none; /* 初期状態では非表示 */
+  position: absolute; /* 絶対位置指定 */
+}
+
+/* ドロップダウンメニューのアイテムのスタイル */
+.dropdown-item {
+  color: #f490e2; /* ドロップダウンアイテムのテキスト色 */
+  font-size: 14px; /* ドロップダウンアイテムのフォントサイズ */
+  padding: 8px 16px; /* ドロップダウンアイテムのパディング */
+  transition: background-color 0.3s; /* ホバー時のトランジション */
+}
+
+/* ドロップダウンアイテムのホバースタイル */
+/* .dropdown-item:hover {
+  background-color: #e9ecef; 
+} */
+/* グループで探すのリンクのスタイル */
+.nav-link.dropdown-toggle ~ .dropdown-menu,
+.nav-link.dropdown-toggle ~ .dropdown-menu li a {
+  font-size: 14px;
+}
+.bg-body-tertiary {
+  background: none;
+}
+  .custom-image-class {
+    width: 1200px; /* 任意の横幅に調整 */
+    height: 260px; /* 高さを自動調整してアスペクト比を保持 */
+    margin-bottom: 20px;
+    object-fit: cover;
+    object-position: 70% 80%;
+  }
+
+  .feature-images {
+    display: flex;
+    margin: 20px 0 10px 0;
+    margin-bottom: 80px;
+    margin-top: 40px;
+  }

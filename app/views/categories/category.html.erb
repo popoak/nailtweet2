@@ -1,0 +1,20 @@
+
+
+
+
+
+<div class="category-dropdown">
+  <ul>
+    <% categories = ["カテゴリー1", "カテゴリー2", "カテゴリー3"] %>
+    <% categories.each do |category| %>
+      <li><%= link_to category, category_path(category) %></li>
+    <% end %>
+  </ul>
+</div>
+
+<script>
+  $(document).on('click', '.category-dropdown-toggle', function() {
+    $('.category-dropdown').toggleClass('open');
+  });
+</script>
+

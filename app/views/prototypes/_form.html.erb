@@ -1,0 +1,29 @@
+
+ <%= form_with model: prototype, data: { turbo: false },local: true do |f|%>
+ <%= render 'shared/error_messages', model: f.object %> 
+
+   <div class="field"> 
+     <%= f.label :title, "カラー"%><br />
+     <%= f.text_field :title, id:"prototype_title" %> 
+   </div> 
+
+   <div class="field"> 
+     <%= f.label :catch_copy, "商品説明"%><br /> 
+     <%= f.text_area :catch_copy, class: :form__text, id:"prototype_catch_copy" %> 
+   </div>
+
+   <div class="field"> 
+     <%= f.label :price, "商品価格"%><br />
+     <%= f.text_field :price, id:"prototype_price" %> 
+   </div> 
+
+
+  <div class="field"> 
+     <%= f.label :image, "商品画像"%><br /> 
+     <%= f.file_field :image, id:"prototype_image" %> 
+   </div> 
+
+   <div class="actions"> 
+     <%= f.submit "出品する", class: :form__btn  %> 
+   </div> 
+ <% end %> 

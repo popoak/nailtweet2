@@ -1,0 +1,65 @@
+<%# <main class="main"> %>
+  <%# <% <div class="inner"> %> 
+  
+    
+
+    <%# 画像を表示する %>
+    <header class="header">
+  <div class="nav__left">
+    <%= link_to "カテゴリーから探す", categories_path, class: "nav__btn nav__category" %>
+      <%= link_to "グループで探す", groups_path, class: "nav__btn nav__group" %>
+      <%= form_with(url: search_prototypes_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "商品を検索する", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
+  </div>
+  <%= image_tag('FQ2k7lpaMAAKR6N (1).jpg', alt: 'ヘッダー画像') %> 
+  <div class="nav">
+    
+    <!-- 他のコード（ログインボタンや検索フォームなど） -->
+  </div>
+    </header>
+
+    <div class="inner">
+
+
+    <div class="ranking-header">
+  <h2 class="ranking-title">
+    <img src="<%= image_path('oukan.jpeg') %>" alt="アイコン" class="ranking-icon">
+    <span class="ranking-text">人気アイテム</span>
+    <img src="<%= image_path('oukan.jpeg') %>" alt="アイコン" class="ranking-icon">
+  </h2>
+</div>
+    <div class="ranking-images">
+      <% @weekly_ranked_prototypes.each do |prototype| %>
+        <div class="ranking-item">
+          <%= link_to prototype_path(prototype) do %>
+            <%= image_tag prototype.image, alt: prototype.title, class: 'ranking-image' %>
+          <% end %>
+          <p class="ranking-likes">
+  <%= image_tag "thumb_16_2_1113.png", alt: "Heart Icon", width: 20, height: 20 %>
+  <%= prototype.likes.count %>
+</p>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="feature-images">
+  <%= image_tag('fruit-br.jpeg', alt: '特集画像', class: 'small-image') %>
+  <%= image_tag('summer_bn.png', alt: '特集画像') %>
+</div>
+
+    
+
+    <%# ログインしているときは以下を表示する %>
+    
+
+    <div class="card__wrapper">
+      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+      <%= render partial: "prototype" %>
+    </div>
+  </div>
+<%# </main> %>
+
+
+
